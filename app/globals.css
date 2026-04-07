@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #EFF2F7;
+  --color-surface: #E2E6F0;
+  --color-ink: #2C3348;
+  --color-ink-2: #5A6480;
+  --color-ink-3: #9AA0B4;
+  --color-line: #C6CEDC;
+  --color-olive: #4A65A8;
+  --color-olive-dark: #3A5290;
+}
+
+body {
+  background-color: #EFF2F7;
+  color: #2C3348;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
