@@ -8,6 +8,9 @@ It also includes an AI chat panel that can answer questions about my experience 
 
 **Live:** https://ziltonportfolio.io
 
+## Preview
+![portfolio preview](./public/website-preview.png)
+
 ## Features
 - Landing page with AI-powered chat experience
 - About page
