@@ -28,8 +28,11 @@ const skills = [
 export default function About() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 flex flex-col gap-12">
-      <section className="flex flex-col gap-4">
-        <h1 className="text-2xl font-semibold tracking-tight text-ink">About</h1>
+      <h1 className="text-2xl font-semibold tracking-tight text-ink">About</h1>
+
+      {/* Work Experience */}
+      <section className="flex flex-col gap-3">
+        <h2 className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Work Experience</h2>
         <div className="flex flex-col gap-4 text-sm text-ink-2 leading-relaxed max-w-2xl">
           <p>
             I&apos;m a backend software engineer with over five years of experience building distributed
@@ -42,14 +45,10 @@ export default function About() {
             from hours to minutes.
           </p>
           <p>
-            Alongside the backend work, I developed a strong interest in application security- doing
+            Alongside the backend work, I developed a strong interest in application security — doing
             threat modeling, coordinating penetration testing, and integrating SAST, DAST, and SCA
             tooling into delivery workflows. I also served as a security champion on multiple teams,
             bridging engineering and daily security practices.
-          </p>
-          <p>
-            I hold a B.S. in Computer Science from Oregon State University and a B.A. in American
-            Studies from Macalester College.
           </p>
           <p>
             I&apos;m currently looking for roles in backend engineering, application security, or
@@ -59,8 +58,43 @@ export default function About() {
         </div>
       </section>
 
+      {/* Path into Tech */}
+      <section className="flex flex-col gap-3">
+        <h2 className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Path into Tech</h2>
+        <div className="flex flex-col gap-4 text-sm text-ink-2 leading-relaxed max-w-2xl">
+          <p>
+            My path into tech was nontraditional. I attended Hackbright Academy in 2020 and landed
+            my first engineering role at Target shortly after. I went on to earn a B.S. in Computer
+            Science from Oregon State University in 2024 — while working as a software engineer full-time
+            — to deepen my CS fundamentals. I also hold a B.A. in American Studies from Macalester College.
+          </p>
+        </div>
+      </section>
+
+      {/* Community Engagement */}
+      <section className="flex flex-col gap-3">
+        <h2 className="text-xs font-semibold text-ink-3 uppercase tracking-wider">Community Engagement</h2>
+        <div className="flex flex-col gap-4 text-sm text-ink-2 leading-relaxed max-w-2xl">
+          <p>
+            I recently joined the board of the Women in Cybersecurity (WiCyS) Houston Affiliate as
+            part of the Mentorship &amp; Engagement team. I also help lead{' '}
+            <a
+              href="https://cybersecuritycircle.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink underline underline-offset-2 hover:text-ink-2 transition-colors"
+            >
+              Cybersecurity Circle in Sugar Land
+            </a>
+            , a monthly community meetup that brings the group&apos;s weekly Houston gatherings to a
+            broader local audience.
+          </p>
+        </div>
+      </section>
+
+      {/* Technical Skills */}
       <section className="flex flex-col gap-5">
-        <h2 className="text-sm font-semibold text-ink uppercase tracking-wider">
+        <h2 className="text-xs font-semibold text-ink-3 uppercase tracking-wider">
           Technical Skills
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

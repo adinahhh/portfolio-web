@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect, FormEvent } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -17,7 +17,7 @@ export default function AIChatPanel() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (!input.trim() || loading) return;
 
@@ -70,7 +70,7 @@ export default function AIChatPanel() {
   }
 
   return (
-    <div className="border border-line rounded-lg flex flex-col bg-canvas" style={{ height: '420px' }}>
+    <div className="border border-line rounded-lg flex flex-col bg-canvas" style={{ minHeight: '340px', maxHeight: '520px', height: '420px' }}>
       {/* Header */}
       <div className="px-4 py-3 border-b border-line shrink-0">
         <p className="text-sm font-medium text-ink">Ask Whitney&apos;s AI</p>
@@ -112,23 +112,37 @@ export default function AIChatPanel() {
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="px-4 py-3 border-t border-line flex gap-2 shrink-0">
-        <input
-          type="text"
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder="Ask a question..."
-          disabled={loading}
-          className="flex-1 text-sm border border-line rounded-md px-3 py-2 bg-canvas text-ink placeholder:text-ink-3 focus:outline-none focus:ring-1 focus:ring-ink-3 disabled:opacity-50"
-        />
-        <button
-          type="submit"
-          disabled={loading || !input.trim()}
-          className="text-sm px-4 py-2 bg-olive text-white rounded-md hover:bg-olive-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          Send
-        </button>
-      </form>
+      {messages.filter(m => m.role === 'user').length >= 8 ? (
+        <div className="px-4 py-4 border-t border-line shrink-0 text-center flex flex-col gap-1">
+          <p className="text-xs text-ink-2">Looks like you have a lot of questions — Whitney would love to chat.</p>
+          <a
+            href="https://www.linkedin.com/in/zilton/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-olive hover:text-olive-dark transition-colors"
+          >
+            Reach out on LinkedIn &rarr;
+          </a>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="px-4 py-3 border-t border-line flex gap-2 shrink-0">
+          <input
+            type="text"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder="Ask a question..."
+            disabled={loading}
+            className="flex-1 text-sm border border-line rounded-md px-3 py-2 bg-canvas text-ink placeholder:text-ink-3 focus:outline-none focus:ring-1 focus:ring-ink-3 disabled:opacity-50"
+          />
+          <button
+            type="submit"
+            disabled={loading || !input.trim()}
+            className="text-sm px-4 py-2 bg-olive text-white rounded-md hover:bg-olive-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            Send
+          </button>
+        </form>
+      )}
     </div>
   );
 }

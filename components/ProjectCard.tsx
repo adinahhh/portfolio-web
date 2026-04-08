@@ -4,6 +4,7 @@ type ProjectCardProps = {
   tags: string[];
   githubUrl?: string;
   status?: 'live' | 'in-progress';
+  tryIt?: string;
 };
 
 export default function ProjectCard({
@@ -12,6 +13,7 @@ export default function ProjectCard({
   tags,
   githubUrl,
   status = 'live',
+  tryIt,
 }: ProjectCardProps) {
   return (
     <div className="border border-line rounded-lg p-5 flex flex-col gap-4 bg-canvas">
@@ -36,6 +38,13 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
+
+      {tryIt && (
+        <div className="border border-line rounded-md px-3 py-2 flex items-center gap-2">
+          <span className="text-xs text-ink-3 shrink-0">Try it:</span>
+          <code className="text-xs text-ink font-mono">{tryIt}</code>
+        </div>
+      )}
 
       {githubUrl && (
         <a

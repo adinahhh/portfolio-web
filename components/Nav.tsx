@@ -16,10 +16,10 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="border-b border-line">
+    <nav className="bg-nav">
       <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-sm font-semibold tracking-tight text-ink">
-          Whitney Zilton
+        <Link href="/" className="text-sm font-semibold tracking-tight text-nav-ink font-mono">
+          &lt;whitney /&gt;
         </Link>
 
         {/* Desktop nav */}
@@ -30,8 +30,8 @@ export default function Nav() {
                 href={href}
                 className={`text-sm transition-colors ${
                   pathname === href
-                    ? 'text-ink font-medium'
-                    : 'text-ink-2 hover:text-ink'
+                    ? 'text-nav-ink font-medium'
+                    : 'text-nav-muted hover:text-nav-ink'
                 }`}
               >
                 {label}
@@ -42,7 +42,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="sm:hidden text-ink-2 hover:text-ink"
+          className="sm:hidden text-nav-muted hover:text-nav-ink"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -58,7 +58,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="sm:hidden border-t border-line px-6 py-4">
+        <div className="sm:hidden border-t border-nav-muted/20 px-6 py-4">
           <ul className="flex flex-col gap-4">
             {links.map(({ href, label }) => (
               <li key={href}>
@@ -66,7 +66,7 @@ export default function Nav() {
                   href={href}
                   onClick={() => setOpen(false)}
                   className={`text-sm ${
-                    pathname === href ? 'text-ink font-medium' : 'text-ink-2'
+                    pathname === href ? 'text-nav-ink font-medium' : 'text-nav-muted'
                   }`}
                 >
                   {label}

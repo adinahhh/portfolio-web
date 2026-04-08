@@ -7,8 +7,11 @@
   --color-ink-2: #5A6480;
   --color-ink-3: #9AA0B4;
   --color-line: #C6CEDC;
-  --color-olive: #4A65A8;
-  --color-olive-dark: #3A5290;
+  --color-olive: #3D5BE0;
+  --color-olive-dark: #2D4AC8;
+  --color-nav: #2C3348;
+  --color-nav-ink: #EFF2F7;
+  --color-nav-muted: #9AA0B4;
 }
 
 body {
