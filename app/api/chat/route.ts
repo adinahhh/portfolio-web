@@ -2,8 +2,6 @@ import Anthropic from '@anthropic-ai/sdk';
 import { SYSTEM_PROMPT } from '@/lib/systemPrompt';
 import { headers } from 'next/headers';
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
 // In-memory rate limiter: max 20 requests per IP per hour
 const WINDOW_MS = 60 * 60 * 1000;
 const MAX_REQUESTS = 20;
@@ -28,11 +26,13 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
   }
 
-  const { messages } = await req.json();
-
   if (!process.env.ANTHROPIC_API_KEY) {
-    return Response.json({ error: 'API key is not set in environment' }, { status: 500 });
+    console.error('ANTHROPIC_API_KEY is not set');
+    return Response.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
+
+  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const { messages } = await req.json();
 
   try {
     const response = await client.messages.create({
@@ -45,8 +45,7 @@ export async function POST(req: Request) {
     const text = response.content[0].type === 'text' ? response.content[0].text : '';
     return Response.json({ text });
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
-    console.error('Anthropic API error:', message);
-    return Response.json({ error: message }, { status: 500 });
+    console.error('Anthropic API error:', err instanceof Error ? err.message : err);
+    return Response.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }
