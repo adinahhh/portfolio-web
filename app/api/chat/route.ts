@@ -30,6 +30,10 @@ export async function POST(req: Request) {
 
   const { messages } = await req.json();
 
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return Response.json({ error: 'API key is not set in environment' }, { status: 500 });
+  }
+
   try {
     const response = await client.messages.create({
       model: 'claude-sonnet-4-6',
