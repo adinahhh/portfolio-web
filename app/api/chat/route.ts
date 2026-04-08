@@ -30,14 +30,19 @@ export async function POST(req: Request) {
 
   const { messages } = await req.json();
 
-  const response = await client.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 1024,
-    system: SYSTEM_PROMPT,
-    messages,
-  });
+  try {
+    const response = await client.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 1024,
+      system: SYSTEM_PROMPT,
+      messages,
+    });
 
-  const text = response.content[0].type === 'text' ? response.content[0].text : '';
-
-  return Response.json({ text });
+    const text = response.content[0].type === 'text' ? response.content[0].text : '';
+    return Response.json({ text });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    console.error('Anthropic API error:', message);
+    return Response.json({ error: message }, { status: 500 });
+  }
 }

@@ -38,7 +38,8 @@ export default function AIChatPanel() {
         throw new Error('Request failed');
       }
 
-      const { text } = await res.json();
+      const data = await res.json();
+      const text = data.text ?? data.error ?? 'Something went wrong. Please try again.';
       setMessages(prev => {
         const updated = [...prev];
         updated[updated.length - 1] = { role: 'assistant', content: text };
