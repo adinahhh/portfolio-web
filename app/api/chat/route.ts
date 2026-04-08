@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { SYSTEM_PROMPT } from '@/lib/systemPrompt';
 import { headers } from 'next/headers';
 
-const client = new Anthropic();
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // In-memory rate limiter: max 20 requests per IP per hour
 const WINDOW_MS = 60 * 60 * 1000;
