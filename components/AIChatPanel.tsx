@@ -34,12 +34,8 @@ export default function AIChatPanel() {
         body: JSON.stringify({ messages: history }),
       });
 
-      if (!res.ok) {
-        throw new Error('Request failed');
-      }
-
       const data = await res.json();
-      const text = data.text ?? data.error ?? 'Something went wrong. Please try again.';
+      const text = data.text ?? data.error ?? `Error ${res.status}: unknown`;
       setMessages(prev => {
         const updated = [...prev];
         updated[updated.length - 1] = { role: 'assistant', content: text };
