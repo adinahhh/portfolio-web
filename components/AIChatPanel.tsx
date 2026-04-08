@@ -38,23 +38,12 @@ export default function AIChatPanel() {
         throw new Error('Request failed');
       }
 
-      const reader = res.body?.getReader();
-      const decoder = new TextDecoder();
-      if (!reader) return;
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const chunk = decoder.decode(value);
-        setMessages(prev => {
-          const updated = [...prev];
-          updated[updated.length - 1] = {
-            role: 'assistant',
-            content: updated[updated.length - 1].content + chunk,
-          };
-          return updated;
-        });
-      }
+      const { text } = await res.json();
+      setMessages(prev => {
+        const updated = [...prev];
+        updated[updated.length - 1] = { role: 'assistant', content: text };
+        return updated;
+      });
     } catch {
       setMessages(prev => {
         const updated = [...prev];
