@@ -8,7 +8,7 @@ const projects = [
     tags: ['Go', 'SSH', 'Cryptography', 'Ed25519', 'AWS EC2', 'Route 53'],
     githubUrl: 'https://github.com/adinahhh/portfolio-ssh',
     status: 'live' as const,
-    tryIt: 'ssh ziltonportfolio.io',
+    tryIt: 'ssh ssh.ziltonportfolio.io',
   },
   {
     title: 'portfolio-tui',
