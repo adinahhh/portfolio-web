@@ -19,10 +19,10 @@ const projects = [
     status: 'live' as const,
   },
   {
-    title: 'Compiler-Integrated SAST Engine for Go',
+    title: 'Go Toolchain Security Wrapper',
     description:
-      'A static analysis security testing engine that integrates directly with the Go compiler toolchain to surface security vulnerabilities at compile time. Designed to catch security issues earlier in the development cycle by operating at the compiler level rather than as a standalone linter.',
-    tags: ['Go', 'SAST', 'Static Analysis', 'Security', 'Compiler'],
+      'A static application security testing engine designed to run as part of the Go toolchain workflow, surfacing vulnerabilities during build execution rather than as a standalone linter. Planned support for AST, SSA, taint tracking, and policy-based build failures.',
+    tags: ['Go', 'SAST', 'Static Analysis', 'Security'],
     status: 'in-progress' as const,
   },
 ];
