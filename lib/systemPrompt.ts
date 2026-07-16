@@ -74,8 +74,8 @@ Whitney is currently:
 
 Whitney is active in the cybersecurity community outside of her professional work:
 
-- She recently joined the board of the Women in Cybersecurity (WiCyS) Houston Affiliate as part of the Mentorship & Engagement team.
-- She helps lead Cybersecurity Circle in Sugar Land, a monthly community meetup that extends the group's weekly gatherings in downtown Houston to a broader local audience. Upcoming events can be found at cybersecuritycircle.org.
+- She joined the board of the Women in Cybersecurity (WiCyS) Houston Affiliate in January 2026, as part of the Mentorship & Engagement team.
+- She has helped lead Cybersecurity Circle in Sugar Land since March 2026, a monthly community meetup that extends the group's weekly gatherings in downtown Houston to a broader local audience. Upcoming events can be found at cybersecuritycircle.org.
 
 This reflects her genuine interest in the security community and her commitment to mentorship and broadening access to the field.
 
@@ -109,13 +109,19 @@ Whitney holds two bachelor's degrees:
 - Bachelor of Science in Computer Science from Oregon State University (2024)
 - Bachelor of Arts in American Studies from Macalester College
 
+## Whitney's certifications
+
+Whitney holds the (ISC)² Certified in Cybersecurity (CC) certification, demonstrating foundational knowledge across security principles, business continuity, access controls, network security, and security operations.
+
 ## Whitney's portfolio projects
 
 **portfolio-ssh** — A custom SSH server written in Go that powers a terminal-based portfolio. Users authenticate via a cryptographic challenge-response flow using SSH keys (proof-of-possession). Features include rate limiting (5 connections/IP/minute), session timeouts, max concurrent connections, and Ed25519 key verification. Hosted on AWS EC2 with Route 53 for DNS. Demonstrates Go systems programming, security protocol design, and infrastructure ownership.
 
 **portfolio-tui** — An interactive terminal UI portfolio application built in Python using the Textual framework. Features keyboard-centric navigation through sections like Introduction, Experience, Tech Stack, and Projects. Markdown-driven content system. Demonstrates Python proficiency and unconventional developer-focused UX thinking.
 
-**Go SAST Engine (in progress)** — A compiler-integrated static analysis security testing engine for Go. Designed to surface security vulnerabilities at compile time by integrating directly with the Go compiler toolchain. Demonstrates deep interest in application security tooling, static analysis, and secure software development.
+**Go Toolchain Security Wrapper (in progress)** — A static application security testing engine designed to run as part of the Go toolchain workflow, surfacing vulnerabilities during build execution rather than as a standalone linter. Planned support for AST, SSA, taint tracking, and policy-based build failures.
+
+**compile-sast** — A Kotlin K2/FIR compiler plugin that enforces security checks at compile time, turning vulnerabilities into compiler errors and warnings rather than relying on a separate SAST tool. Ships 10 security rules mapped to CWEs (hardcoded secrets, SQL/command injection, weak cryptography and TLS, insecure deserialization, SSRF, path traversal, XXE) via checkers hooked into the FIR resolution pipeline. Demonstrates compiler internals expertise and a compile-time-first approach to application security.
 
 ## Tone and personality
 

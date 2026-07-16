@@ -25,6 +25,14 @@ const projects = [
     tags: ['Go', 'SAST', 'Static Analysis', 'Security'],
     status: 'in-progress' as const,
   },
+  {
+    title: 'compile-sast',
+    description:
+      'A Kotlin K2/FIR compiler plugin that enforces security checks at compile time, converting vulnerabilities into compiler errors and warnings instead of relying on a separate SAST tool. Ships 10 security rules mapped to CWEs — including hardcoded secrets, SQL/command injection, weak cryptography and TLS, insecure deserialization, SSRF, path traversal, and XXE — via checkers hooked into the FIR resolution pipeline.',
+    tags: ['Kotlin', 'Compiler Plugins', 'SAST', 'Security', 'Gradle'],
+    githubUrl: 'https://github.com/adinahhh/compile-sast',
+    status: 'live' as const,
+  },
 ];
 
 export default function Projects() {
