@@ -4,7 +4,7 @@ const projects = [
   {
     title: 'portfolio-ssh',
     description:
-      'A custom SSH server written in Go that powers a terminal-based portfolio. Users authenticate via a cryptographic challenge-response flow using Ed25519 SSH keys — no passwords or web forms. Features rate limiting, session timeouts, and max concurrent connection enforcement. Hosted on AWS EC2 with Route 53.',
+      'A custom SSH server written in Go that powers a terminal-based portfolio. Users authenticate via a cryptographic challenge-response flow using Ed25519 SSH keys. Features rate limiting, session timeouts, and max concurrent connection enforcement. Hosted on AWS EC2 with Route 53.',
     tags: ['Go', 'SSH', 'Cryptography', 'Ed25519', 'AWS EC2', 'Route 53'],
     githubUrl: 'https://github.com/adinahhh/portfolio-ssh',
     status: 'live' as const,
@@ -13,16 +13,16 @@ const projects = [
   {
     title: 'portfolio-tui',
     description:
-      'An interactive terminal UI portfolio application built in Python using the Textual framework. Navigate sections — Introduction, Experience, Tech Stack, and Projects — entirely from the keyboard. Markdown-driven content system for easy updates. A developer-focused alternative to a traditional web portfolio.',
+      'An interactive terminal UI portfolio application built in Python using the Textual framework. Navigate sections entirely from the keyboard. Markdown-driven content system for easy updates. A developer-focused alternative to a traditional web portfolio.',
     tags: ['Python', 'Textual', 'TUI', 'Markdown'],
     githubUrl: 'https://github.com/adinahhh/portfolio-tui',
     status: 'live' as const,
   },
   {
-    title: 'Go Toolchain Security Wrapper',
+    title: 'Continuous Threat Model Verification',
     description:
-      'A static application security testing engine designed to run as part of the Go toolchain workflow, surfacing vulnerabilities during build execution rather than as a standalone linter. Planned support for AST, SSA, taint tracking, and policy-based build failures.',
-    tags: ['Go', 'SAST', 'Static Analysis', 'Security'],
+      'A CI/CD tool that verifies Threagile threat models against Terraform and application code, failing the build when the model drifts from what\'s actually deployed. Can also serve as a check on AI-generated security artifacts.',
+    tags: ['Threat Modeling', 'Threagile', 'Terraform', 'CI/CD', 'Security'],
     status: 'in-progress' as const,
   },
   {

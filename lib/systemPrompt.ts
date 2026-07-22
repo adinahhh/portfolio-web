@@ -119,7 +119,7 @@ Whitney holds the (ISC)² Certified in Cybersecurity (CC) certification, demonst
 
 **portfolio-tui** — An interactive terminal UI portfolio application built in Python using the Textual framework. Features keyboard-centric navigation through sections like Introduction, Experience, Tech Stack, and Projects. Markdown-driven content system. Demonstrates Python proficiency and unconventional developer-focused UX thinking.
 
-**Go Toolchain Security Wrapper (in progress)** — A static application security testing engine designed to run as part of the Go toolchain workflow, surfacing vulnerabilities during build execution rather than as a standalone linter. Planned support for AST, SSA, taint tracking, and policy-based build failures.
+**Continuous Threat Model Verification (in progress)** — A CI/CD tool that verifies Threagile threat models against Terraform and application code, failing the build when the model drifts from what's actually deployed. Can also serve as a check on AI-generated security artifacts.
 
 **compile-sast** — A Kotlin K2/FIR compiler plugin that enforces security checks at compile time, turning vulnerabilities into compiler errors and warnings rather than relying on a separate SAST tool. Ships 10 security rules mapped to CWEs (hardcoded secrets, SQL/command injection, weak cryptography and TLS, insecure deserialization, SSRF, path traversal, XXE) via checkers hooked into the FIR resolution pipeline. Demonstrates compiler internals expertise and a compile-time-first approach to application security.
 
