@@ -8,12 +8,15 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
   { href: '/resume', label: 'Resume' },
 ];
 
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isActive = (href: string) =>
+    href === '/' ? pathname === href : pathname.startsWith(href);
 
   return (
     <nav className="bg-nav">
@@ -29,7 +32,7 @@ export default function Nav() {
               <Link
                 href={href}
                 className={`text-sm transition-colors ${
-                  pathname === href
+                  isActive(href)
                     ? 'text-nav-ink font-medium'
                     : 'text-nav-muted hover:text-nav-ink'
                 }`}
@@ -66,7 +69,7 @@ export default function Nav() {
                   href={href}
                   onClick={() => setOpen(false)}
                   className={`text-sm ${
-                    pathname === href ? 'text-nav-ink font-medium' : 'text-nav-muted'
+                    isActive(href) ? 'text-nav-ink font-medium' : 'text-nav-muted'
                   }`}
                 >
                   {label}
